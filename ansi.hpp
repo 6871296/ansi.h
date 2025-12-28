@@ -270,9 +270,9 @@ namespace std::ansi
 	ansi_reverse reverse;
 	ansi_conceal conceal;
 	ansi_strike strike;
-	ansi_fg fgcolor;
-	ansi_bg bgcolor;
-	ansi_cursor_pos cursor_pos;
+	ansi_fg& fg(int n=2){ return *(new ansi_fg(n)); }
+	ansi_bg& bg(int n=2){ return *(new ansi_bg(n)); }
+	ansi_cursor_pos& cursor_pos(int x, int y) {return *(new ansi_cursor_pos(x, y));}
 	ansi_cursor_up cursor_up;
 	ansi_cursor_down cursor_down;
 	ansi_cursor_left cursor_left;
